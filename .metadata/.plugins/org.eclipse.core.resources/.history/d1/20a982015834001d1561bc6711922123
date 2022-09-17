@@ -1,0 +1,24 @@
+package persistence;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+public class TimesDao 
+{
+	private Connection c;
+	
+	public TimesDao() throws ClassNotFoundException, SQLException 
+	{
+
+		GenericDao gdao = new GenericDao();
+		c = gdao.getConnection();
+	}
+	
+	public List<Times> buscarTimes() throws SQLException
+	{
+		
+	}
+	
+	return null;
+}

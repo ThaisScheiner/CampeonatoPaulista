@@ -1,0 +1,27 @@
+package model;
+
+public class grupos 
+{
+	String CodigoGrupo;
+	int CodigoGrupoTime;
+	
+	public String getCodigoGrupo() {
+		return CodigoGrupo;
+	}
+	public void setCodigoGrupo(String codigoGrupo) {
+		CodigoGrupo = codigoGrupo;
+	}
+	public int getCodigoGrupoTime() {
+		return CodigoGrupoTime;
+	}
+	public void setCodigoGrupoTime(int codigoGrupoTime) {
+		CodigoGrupoTime = codigoGrupoTime;
+	}
+	
+	@Override
+	public String toString() {
+		return "grupos [CodigoGrupo=" + CodigoGrupo + ", CodigoGrupoTime=" + CodigoGrupoTime + "]";
+	}
+	
+	
+}
