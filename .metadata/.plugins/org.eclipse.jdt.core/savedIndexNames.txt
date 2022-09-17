@@ -1,8 +1,0 @@
-INDEX VERSION 1.131+C:\Users\Thais\OneDrive - Fatec Centro Paula Souza\FATEC\5 Semestre 08-2022\Laboratório de Banco de Dados\Tarefas\CampeonatoPaulista\.metadata\.plugins\org.eclipse.jdt.core
-1602128660.index
-826315648.index
-3149800699.index
-3593142762.index
-1865797976.index
-3852298324.index
-2568725404.index
