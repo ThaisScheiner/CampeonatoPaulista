@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+C:\Users\Thais\OneDrive - Fatec Centro Paula Souza\FATEC\5 Semestre 08-2022\Laboratório de Banco de Dados\Projetos\CampeonatoPaulista\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3812232555.index
+1314604479.index
+2803673790.index
+3852298324.index
+1567216521.index
+4055774468.index
+4055774468.index
+4123907869.index

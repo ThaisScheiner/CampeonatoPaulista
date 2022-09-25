@@ -1,36 +1,27 @@
 package model;
 
-import java.io.Serializable;
-
-public class grupo implements Serializable
+public class Grupo 
 {
 	private String grupo;
-	private Time time;
+	private String codigoTime;
 	
-	public grupo() {
-		super();
-	}
-
-	public grupo(String grupo, Time time) {
-		this.grupo = grupo;
-		this.time = time;
-	}
-
 	public String getGrupo() {
 		return grupo;
 	}
-
 	public void setGrupo(String grupo) {
 		this.grupo = grupo;
 	}
-
-	public Time getTime() {
-		return time;
+	public String getCodigoTime() {
+		return codigoTime;
 	}
-
-	public void setTime(Time time) {
-		this.time = time;
+	public void setCodigoTime(String codigoTime) {
+		this.codigoTime = codigoTime;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "Grupo [grupo=" + grupo + ", codigoTime=" + codigoTime + "]";
+	}
+	
 	
 }

@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+C:\Users\Thais\OneDrive - Fatec Centro Paula Souza\FATEC\5 Semestre 08-2022\Laboratório de Banco de Dados\Projetos\CampeonatoPaulista\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4055774468.index
+\CampeonatoPaulista\src\main\java
+C:\Users\Thais\OneDrive - Fatec Centro Paula Souza\FATEC\5 Semestre 08-2022\Laboratório de Banco de Dados\Projetos\testeCampeonato\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\335800586.index
+\testeCampeonato\src\main\java
+C:\Users\Thais\OneDrive - Fatec Centro Paula Souza\FATEC\5 Semestre 08-2022\Laboratório de Banco de Dados\Projetos\testeCampeonato\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4055774468.index
+\CampeonatoPaulista\src\main\java

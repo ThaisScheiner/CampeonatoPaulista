@@ -5,96 +5,54 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+//import java.sql.Types;
 import java.util.ArrayList;
-import java.util.List;
-
-import model.Time;
-import model.grupo;
 
 
-public class GrupoDao 
-{
+import model.Grupo;
+
+public class GrupoDao {
+	
 	private Connection c;
 	
-	private GenericDao gDao;
-	
-	public GrupoDao(GenericDao gDao)
-	{
-		this.gDao = gDao;
+	public GrupoDao() throws ClassNotFoundException, SQLException {
+		GenericDao gDao = new GenericDao();
+		c = gDao.getConnection();
 	}
 	
-	public List<grupo> gerarGrupos() throws SQLException, ClassNotFoundException 
-	{
-		
-		Connection c = gDao.getConnection();
-
-        String sqlGera = "{CALL sp_insereGrupoTimes}";
-
-        CallableStatement cs = c.prepareCall(sqlGera);
-        
-        cs.execute();
-        
-        String sqlGrupo = "select p.Grupo, t.* from Times t, Grupos p where p.CodigoTime = t.CodigoTime";
-
-        PreparedStatement ps = c.prepareStatement(sqlGrupo);
-
-		ResultSet rs = ps.executeQuery();
-        		
-		List<grupo> grupos = new ArrayList<>();
-		
-		String grupo = "";
-
-		while (rs.next()) {
-			
-			grupo = rs.getString(1);
-
-			Time time = new Time();
-			time.setCodigoTime(rs.getInt(2));
-			time.setNomeTime(rs.getString(3));
-			time.setCidade(rs.getString(4));
-			time.setEstadio(rs.getString(5));
-
-			grupo g = new grupo(grupo, time);
-
-			grupos.add(g);
-		}
-		ps.close();
-
-		return grupos;
-
+	public String divideTimes() throws SQLException{
+		String sql = "{CALL SP_DivideTime_INS}";
+		CallableStatement cs = c.prepareCall(sql);
+		cs.execute();
+		String saida = "grupos gerados, as partidas foram apagadas será necessario gerar novos jogos";
+		return saida;
 	}
 	
-	public List<grupo> selectGrupos() throws SQLException {
-
-		String sqlGrupo = "select p.Grupo, t.* from Times t, Grupos p where p.CodigoTime = t.CodigoTime";
-
-        PreparedStatement ps = c.prepareStatement(sqlGrupo);
-
-		ResultSet rs = ps.executeQuery();
-        		
-		List<grupo> grupos = new ArrayList<>();
+	public ArrayList<Grupo> mostraGrupo() throws SQLException, ClassNotFoundException{
 		
-		String grupo = "";
+		GenericDao gDao = new GenericDao();
+		c = gDao.getConnection();
+		
+		ArrayList<Grupo> grupoLista = new ArrayList<Grupo>();
+		
+		String selectStatement = "select gp.grupo, tm.NomeTime from grupos as gp INNER JOIN times as tm ON gp.codigoTime = tm.codigoTime";
+		PreparedStatement prepStmt = c.prepareStatement(selectStatement);
+	    ResultSet rs = prepStmt.executeQuery();
 
-		while (rs.next()) {
-			
-			grupo = rs.getString(1);
-
-			Time time = new Time();
-			time.setCodigoTime(rs.getInt(2));
-			time.setNomeTime(rs.getString(3));
-			time.setCidade(rs.getString(4));
-			time.setEstadio(rs.getString(5));
-
-			grupo g = new grupo(grupo, time);
-
-			grupos.add(g);
-		}
-		ps.close();
-
-		return grupos;
-
+	    while (rs.next()) {	
+	    	Grupo grupo = new Grupo();
+	    	grupo.setGrupo(rs.getString("grupo"));
+	    	grupo.setCodigoTime(rs.getString("NomeTime"));
+	    	grupoLista.add(grupo);
+	     }
+	   
+	     rs.close();
+	     prepStmt.close();
+		
+		return grupoLista;
+		
 	}
-
+	
+	
 	
 }
