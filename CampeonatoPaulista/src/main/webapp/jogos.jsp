@@ -49,7 +49,7 @@
 						</thead>
 						<tbody>
 
-						<form action="insereResultado" method="post">
+						
 						
 						<c:set var ="contA" value="1" scope="page"> </c:set>
 						<c:set var ="contB" value="9" scope="page"> </c:set>
@@ -73,7 +73,7 @@
 							<c:set var="contC" value="${contC+1}" scope="page"/>							
 							</c:forEach>
 						
-						</form>
+						
 
 						</tbody>
 					</table>
