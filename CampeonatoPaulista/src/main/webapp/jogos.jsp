@@ -42,7 +42,7 @@
 								<th>Time A</th>
 								
 								<th> x </th>
-								
+								<br/>
 								<th>Time b</th>
 								
 							</tr>
@@ -55,21 +55,16 @@
 						<c:set var ="contB" value="9" scope="page"> </c:set>
 						<c:set var ="contC" value="20" scope="page"> </c:set>
 						
-							<c:forEach var="jogoN" items="${jogo}">
+							<c:forEach var="jogoN" items="${jogos}">
 								<tr align="center" class="table-active">
 									<td>${jogoN.getTimeA()}</td>
 									
 									<input type ="hidden" name="${contC}" value="${jogoN.getId()}"/>
-									
-									<td><input type="number" name="${contA}" placeholder="0"></td>
 																		
 									<td> x </td>
 									
-									<td><input type="number" name="${contB}" placeholder="0"></td>
-									
 									<td>${jogoN.getTimeb()}</td>
-									<td>${jogoN.getRodada()}</td>
-									<td>${jogoN.getId()}</td>
+								
 	
 								</tr>
 								

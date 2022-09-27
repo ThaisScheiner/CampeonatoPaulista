@@ -19,6 +19,18 @@ CREATE tABLE grupos
 	CONSTRAINT FK_codigoTime FOREIGN KEY (codigoTime) REFERENCES times(codigoTime)
 )
 
+create TABLE jogos
+(
+	id INT  IDENTITY,
+	timeA INT,
+	timeb INT,
+	Rodada INT,
+	dataRod DATE,
+	golsTimeA INT,
+	golsTimeB INT
+	PRIMARY KEY(id)
+)
+
 select * from grupos
 select * from times
 
@@ -133,9 +145,7 @@ AS
 		END
 	END
 
-	EXEC SP_DivideTime_INS
-	select * from grupos ORDER BY grupo
-	select * from times
+	
 
 
 
@@ -153,6 +163,11 @@ AS
 	begin
 		set @retorno = 'nao'
 	end 
+
+
+	EXEC SP_DivideTime_INS
+	select * from grupos ORDER BY grupo
+	select * from times
 
 
 CREATE PROCEDURE SP_FormarJogo
@@ -219,8 +234,7 @@ AS
 		END 
 
 
-	EXEC SP_FormarJogo
-	select * from jogos order by Rodada
+	
 
 CREATE PROCEDURE SP_Rodadas(@GrupoManda CHAR(1), @GrupoVisit CHAR(1), @incio INT)
 AS
@@ -300,8 +314,10 @@ AS
 		set @contManda = @contManda + 1
 	end
 
-	EXEC SP_DatasRodadas
+	
 
+	EXEC SP_FormarJogo
+	select * from jogos order by Rodada
 -------------------  fim da procedure ------------------
 
 create PROCEDURE SP_DatasRodadas
@@ -329,21 +345,13 @@ AS
 		SET @rodada = @rodada + 1
 	END
 
-create TABLE jogos
-(
-	id INT  IDENTITY,
-	timeA INT,
-	timeb INT,
-	Rodada INT,
-	dataRod DATE,
-	golsTimeA INT,
-	golsTimeB INT
-	PRIMARY KEY(id)
-)
+	EXEC SP_DatasRodadas
+	select * from jogos order by Rodada
+
 
 select * from jogos 
 
-truncate table jogos
+
 
 select * from grupos order by grupo, codigoTime
 select * from jogos ORDER BY Rodada
@@ -374,4 +382,7 @@ BEGIN
 	RETURN 
 END
 
-select * from fn_jogos ('2019-01-23')
+select * from fn_jogos ('2019-03-03')
+
+
+
