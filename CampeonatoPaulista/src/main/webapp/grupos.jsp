@@ -25,7 +25,7 @@
 	<center>
 		<h1>Tabelas dos Grupos</h1>
 		<form action="MostraGrupos" method="post">
-			<input type="submit" name="enviar" id="inviar" value="Mostrar os grupos">
+			<input type="submit" name="enviar" id="enviar" value="Mostrar os grupos">
 		</form>
 	</center>
 

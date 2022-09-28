@@ -24,15 +24,19 @@
 				<ul class="navbar-nav">
 
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="http://localhost:8080/CampeonatoPaulista/">Home</a></li>
+						aria-current="page" href="http://localhost:8080/testeCampeonato/">Home</a></li>
 
 					<li class="nav-item"><a class="nav-link"
-						href="http://localhost:8080/CampeonatoPaulista/grupos.jsp">Lista
+						href="http://localhost:8080/testeCampeonato/grupos.jsp">Lista
 							de Grupos</a></li>
 
 					<li class="nav-item"><a class="nav-link"
-						href="http://localhost:8080/CampeonatoPaulista/jogos.jsp">Lista
+						href="http://localhost:8080/testeCampeonato/jogos.jsp">Lista
 							de Jogos</a></li>
+							
+					<li class="nav-item"><a class="nav-link"
+						href="http://localhost:8080/testeCampeonato/rodada.jsp">Rodadas
+							dos Jogos</a></li>
 					
 				</ul>
 			</div>

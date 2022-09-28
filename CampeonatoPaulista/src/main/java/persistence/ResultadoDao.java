@@ -6,28 +6,25 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 import model.Jogos;
 
-
-public class TimesDao {
-	
+public class ResultadoDao 
+{
 	private Connection c;
-	
-	public TimesDao() throws ClassNotFoundException, SQLException {
-		GenericDao gDao = new GenericDao();
-		c = gDao.getConnection();
-	}
-	
-	public String geraJogos() throws SQLException{
+
+	public String geraJogos() throws SQLException 
+	{
 		String sql = "{CALL SP_FormarJogo}";
 		CallableStatement cs = c.prepareCall(sql);
 		cs.execute();
-		
+
 		String saida = "As rodadas foram definidas";
 		return saida;
 	}
-	
-	public ArrayList<Jogos> mostraJogo(String data) throws SQLException, ClassNotFoundException{
+
+	public ArrayList<Jogos> mostraJogos() throws SQLException, ClassNotFoundException
+	{
 		
 		System.out.println("comeco do dao");
 		
@@ -37,34 +34,27 @@ public class TimesDao {
 		ArrayList<Jogos> jogosLista = new ArrayList<Jogos>();
 		
 		
-		String selectStatement = "select * from fn_jogos((?))";
-		
-		PreparedStatement prepStmt = c.prepareStatement(selectStatement);
-		prepStmt.setString(1, data);
-	    ResultSet rs = prepStmt.executeQuery();
+		String sql = "select * from jogos";
+		PreparedStatement ps = c.prepareStatement(sql);
+	    ResultSet rs = ps.executeQuery();
 
 	    while (rs.next()) {	
 	    	Jogos jogo = new Jogos();
 	    	jogo.setTimeA(rs.getString(1));
 	    	jogo.setTimeb(rs.getString(2));
 	    	jogo.setRodada(rs.getString(3));
-	    	jogo.setId(rs.getString(4));
+	    	jogo.setDataRod(rs.getString(4));
+	    	jogo.setId(rs.getString(5));
 	    	
 	    	System.out.println("entrou dao");
-	    	
 	    	System.out.println(" jogo no dao " + jogo);
 	    	
 	    	jogosLista.add(jogo);
 	     }
 	   
 	     rs.close();
-	     prepStmt.close();
+	     ps.close();
 		 c.close();
 		return jogosLista;
-	
 	}
-	
-
-	
-	
 }

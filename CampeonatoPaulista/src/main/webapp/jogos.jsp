@@ -25,7 +25,7 @@
 	<center>
 		<form action="Mostrajogos" method="post">
 			<input type="date" name="data" id="data"> 
-			<input type="submit" name="enviar" id="inviar" value="ver Jogos">
+			<input type="submit" name="enviar" id="enviar" value="ver Jogos">
 		</form>
 		
 		<br><br>

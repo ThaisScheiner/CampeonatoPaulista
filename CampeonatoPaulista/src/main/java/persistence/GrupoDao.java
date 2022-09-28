@@ -48,7 +48,7 @@ public class GrupoDao {
 	   
 	     rs.close();
 	     prepStmt.close();
-		
+		 c.close();
 		return grupoLista;
 		
 	}
