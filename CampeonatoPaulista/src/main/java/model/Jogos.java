@@ -2,12 +2,18 @@ package model;
 
 public class Jogos 
 {
+	private String id;
 	private String timeA;
 	private String timeb;
 	private String Rodada;
 	private String dataRod;
-	private String id;
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getTimeA() {
 		return timeA;
 	}
@@ -32,17 +38,14 @@ public class Jogos
 	public void setDataRod(String dataRod) {
 		this.dataRod = dataRod;
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+	
 	@Override
 	public String toString() {
-		return "Jogos [timeA=" + timeA + ", timeb=" + timeb + ", Rodada=" + Rodada + ", dataRod=" + dataRod + ", id="
-				+ id + "]";
+		return "Jogos [id=" + id + ", timeA=" + timeA + ", timeb=" + timeb + ", Rodada=" + Rodada + ", dataRod="
+				+ dataRod + "]";
 	}
+	
+	
 	
 	
 }

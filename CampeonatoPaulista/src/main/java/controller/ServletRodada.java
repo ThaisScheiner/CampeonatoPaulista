@@ -34,7 +34,7 @@ public class ServletRodada extends HttpServlet {
 		try 
 		{
 			ResultadoDao rDao = new ResultadoDao();
-			jogosLista= rDao.mostraJogos();
+			jogosLista= (ArrayList<Jogos>) rDao.mostraJogos();
 		} 
 		catch (ClassNotFoundException | SQLException e) 
 		{
@@ -43,11 +43,12 @@ public class ServletRodada extends HttpServlet {
 		finally 
 		{
 			RequestDispatcher rd = request.getRequestDispatcher("rodada.jsp");
-			request.setAttribute("jogos", jogosLista);
+			request.setAttribute("Jogos", jogosLista);
 			rd.forward(request, response);
 		}
 			
 		}
+	
 	}
 
 
