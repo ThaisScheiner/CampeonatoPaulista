@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Jogos;
 import persistence.ResultadoDao;
-import persistence.ResultadoDao;
+
 
 @WebServlet("/rodada")
 public class ServletRodada extends HttpServlet {
@@ -29,12 +29,15 @@ public class ServletRodada extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<Jogos> jogosLista = new ArrayList<>();
+		
+		ArrayList<Jogos> jogos = new ArrayList<>();
+		
+		Jogos jogosLista = new Jogos();
 		
 		try 
 		{
 			ResultadoDao rDao = new ResultadoDao();
-			jogosLista= (ArrayList<Jogos>) rDao.mostraJogos();
+			jogos = (ArrayList<Jogos>) rDao.mostraJogos();
 		} 
 		catch (ClassNotFoundException | SQLException e) 
 		{
@@ -43,7 +46,8 @@ public class ServletRodada extends HttpServlet {
 		finally 
 		{
 			RequestDispatcher rd = request.getRequestDispatcher("rodada.jsp");
-			request.setAttribute("Jogos", jogosLista);
+			request.setAttribute("jogoLista", jogosLista);
+			request.setAttribute("jogos", jogos);
 			rd.forward(request, response);
 		}
 			

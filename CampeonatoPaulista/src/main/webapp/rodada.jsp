@@ -53,9 +53,9 @@
 
 							<td>x</td>
 
-							<td><c:out value="${jogosLista.timeB } " /></td>
+							<td><c:out value="${jogosLista.timeb } " /></td>
 
-							<td><c:out value="${jogosLista.Rodada }" /></td>
+							<td><c:out value="${jogosLista.rodada }" /></td>
 							<td><c:out value="${jogosLista.dataRod }" /></td>
 						</tr>
 
