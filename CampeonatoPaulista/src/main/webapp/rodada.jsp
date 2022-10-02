@@ -36,7 +36,7 @@
 
 						<th>x</th>
 						<br />
-						<th>Time b</th>
+						<th>Time B</th>
 						<br />
 						<th>Rodada</th>
 						<br />

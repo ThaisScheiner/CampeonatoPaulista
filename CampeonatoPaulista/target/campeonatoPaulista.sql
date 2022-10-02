@@ -35,22 +35,22 @@ select * from grupos
 select * from times
 
 INSERT INTO times VALUES
-(1,'Santos','Santos', 'Estádio Urbano Caldeira',1),
+(1,'Santos','Santos', 'Vila Belmiro',1),
 (2,'Palmeiras','São Paulo','Allianz Parque',1),
 (3,'Corinthians','São Paulo','Neo Química Arena',1),
-(4,'São Paulo','São Paulo','Estádio Cícero Pompeu de Toledo',1),
-(5,'Ponte Preta','Campinas','Estádio Moisés Lucarelli',1),
-(6,'Guarani','Campinas','Estádio Brinco de Ouro da Princesa',1),
-(7,'São Bento','Sorocaba','Estádio Municipal de Sorocaba Walter Ribeiro',1),
-(8,'Novorizontino','Novo Horizonte','Estádio Jorge Ismael de Biasi',1),
-(9,'RB Brasil','Campinas', 'Estádio Moisés Lucarelli',1),
-(10,'Mirassol','Mirassol','Estádio José Maria de Campos Maia',1),
-(11,'Ferroviária','Araraquara','Arena Fonte Luminosa',1),
-(12,'Bragantino','Bragança Paulista','Estádio Nabi Abi Chedid',1),
-(13,'São Caetano','São Caetano do Sul','Estádio Municipal Anacleto Campanella',1),
-(14,'Botafogo-SP','Ribeirão Preto','Estádio Santa Cruz - Botafogo FC Eurobike',1),
-(15,'Ituano','Itu','Estádio Municipal Doutor Novelli Júnior',1),
-(16,'Oeste','Barueri','Arena Barueri',1)
+(4,'São Paulo','São Paulo','Morumbi',1),
+(5,'Ponte Preta','Campinas','Moisés Lucarelli',1),
+(6,'Guarani','Campinas','Brinco de Ouro',1),
+(7,'São Bento','Sorocaba','Walter Ribeiro',1),
+(8,'Novorizontino','Novo Horizonte','Jorge Ismael de Biasi',1),
+(9,'Ponte Preta','Campinas', 'Moisés Lucarelli',1),
+(10,'Mirassol','Mirassol','José Maria de Campos Maia',1),
+(11,'Ferroviária','Araraquara','Fonte Luminosa',1),
+(12,'Red Bull Bragantino','Bragança Paulista','Nabi Abi Chedid',1),
+(13,'São Caetano','São Caetano do Sul','Anacleto Campanella',1),
+(14,'Botafogo-SP','Ribeirão Preto','Santa Cruz',1),
+(15,'Ituano','Itu','Novelli Júnior',1),
+(16,'Inter de Limeira','Limeira','Limeirão',1)
 
 CREATE PROCEDURE SP_Grupo(@num SMALLINT, @retorno CHAR(1) OUTPUT)
 AS
